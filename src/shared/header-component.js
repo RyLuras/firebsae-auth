@@ -1,9 +1,9 @@
-import { auth } from './firebase.js';
+import { auth } from '../firebase.js';
 
 export function makeHeader() {
     const html = /*html*/`
         <header>
-            <h1 class="header-title">Firebase O-Auth Test</h1>
+            <h1 class="header-title"><a href="favorites.html">Favorite Movies</a></h1>
         </header>
     `;
 
@@ -32,6 +32,7 @@ const headerContainer = document.getElementById('header-container');
 
 export default function loadHeader(options) {
     const dom = makeHeader();
+    // we must reference elements before adding dom to parent via appendChild
     const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
 
@@ -41,15 +42,19 @@ export default function loadHeader(options) {
 
     auth.onAuthStateChanged(user => {
         if(user) {
+            // there is a user!
             const userDom = makeProfile(user);
+            // reference elements _before_ appending dom
             const signOutButton = userDom.querySelector('button');
             signOutButton.addEventListener('click', () => {
                 auth.signOut();
+                window.location.hash = '';
             });
             header.appendChild(userDom);
         }
         else {
-            window.location = './auth.html';
+            // no user
+            window.location = './auth.html' + window.location.hash;
         }
     });
 }

@@ -1,2 +1,1 @@
-# firebsae-auth
-Playing around with firebase O-Auth
+TA Refrence for firebase auth

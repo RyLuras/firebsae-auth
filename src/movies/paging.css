@@ -1,0 +1,17 @@
+#paging-section {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#paging-section.hidden {
+    display: none;
+}
+
+#paging-section button {
+    height: 30px;
+    background: lightsteelblue;
+    border: 1px solid black;
+}

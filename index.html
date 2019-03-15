@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firebase O-Auth Test</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies</title>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
 
-    <link rel="stylesheet" href="src/main.css" />
-    <link rel="stylesheet" href="src/header.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/shared/header.css">
+    <link rel="stylesheet" href="src/shared/footer.css">
+    <link rel="stylesheet" href="src/movies/movies.css">
+    <link rel="stylesheet" href="src/movies/search.css">
+    <link rel="stylesheet" href="src/movies/paging.css">
+</head>
+<body>
     <div id="header-container"></div>
 
-    <main></main>
+    <main>
+        <form id="search-form">
+            <input name="search-term">
+            <button>Search</button>
+        </form>
 
-    <script type="module" src="src/index.js"></script>
-  </body>
+        <p id="prompt">
+            Search for a movie to get started.
+        </p>
+
+        <div id="movie-list-container" class="hidden">
+            <section id="paging-section">
+                <button id="previous-button">&lt; Previous</button>
+
+                <div>
+                    Page
+                    <span id="current-page">1</span>
+                    of
+                    <span id="total-pages"></span>
+                </div>
+
+                <button id="next-button">Next &gt;</button>
+            </section>
+
+            <ul id="movie-list">
+                <p class="search-prompt">
+                    Search for a movie above to get started!
+                </p>
+            </ul>
+
+        </div>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="src/movies/movies.js"></script>
+</body>
 </html>

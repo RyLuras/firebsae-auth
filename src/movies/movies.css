@@ -1,0 +1,63 @@
+#movie-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    list-style: none;
+    position: relative;
+    width: 150px;
+    height: 275px;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    background: #eee;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    /* cursor: pointer; */
+}
+
+.movie .favorite-star {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 2px;
+    color: #aaa;
+    user-select: none;
+}
+
+.favorite-star.favorite {
+    color: gold;
+}
+
+.movie a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.movie.selected {
+    background: lightsteelblue;
+}
+
+.movie h2 {
+    font-size: .9em;
+    height: 75px;
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.movie .year {
+    padding-top: 5px;
+    font-size: .75em;
+}
