@@ -5,7 +5,7 @@ const config = {
   projectId: "testauth-d1cf0"
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
