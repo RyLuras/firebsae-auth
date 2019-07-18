@@ -1,8 +1,8 @@
 const config = {
-  apiKey: "AIzaSyDZjuWxUis55gqwfbPK-yhckHgVQ6TvSR8",
-  authDomain: "testauth-d1cf0.firebaseapp.com",
-  databaseURL: "https://testauth-d1cf0.firebaseio.com",
-  projectId: "testauth-d1cf0"
+    apiKey: "AIzaSyDZjuWxUis55gqwfbPK-yhckHgVQ6TvSR8",
+    authDomain: "testauth-d1cf0.firebaseapp.com",
+    databaseURL: "https://testauth-d1cf0.firebaseio.com",
+    projectId: "testauth-d1cf0"
 };
 
 export const app = firebase.initializeApp(config);

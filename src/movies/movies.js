@@ -26,14 +26,9 @@ function loadQuery() {
 
     const url = makeSearchMovieUrl(queryOptions);
 
-    if(!url) {
-        prompt.classList.remove('hidden');
-        moviesContainer.classList.add('hidden');
+    const hasUrl = updateDisplay(url);
+    if(!hasUrl) {
         return;
-    }
-    else {
-        prompt.classList.add('hidden');
-        moviesContainer.classList.remove('hidden');
     }
 
     fetch(url)
@@ -47,4 +42,17 @@ function loadQuery() {
             };
             updatePagingInfo(pagingInfo);
         });
+}
+
+function updateDisplay(url) {
+    if(!url) {
+        prompt.classList.remove('hidden');
+        moviesContainer.classList.add('hidden');
+        return false;
+    }
+    else {
+        prompt.classList.add('hidden');
+        moviesContainer.classList.remove('hidden');
+        return true;
+    }
 }
